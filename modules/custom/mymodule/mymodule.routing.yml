@@ -1,0 +1,9 @@
+## YAML Template.
+mymodule.content:
+  path: '/mymodule'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\FirstController::content'
+    _title: 'My first page and menu'
+  requirements:
+    _permission: 'access content'
+

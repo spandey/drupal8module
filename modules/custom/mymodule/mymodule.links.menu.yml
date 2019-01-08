@@ -1,0 +1,9 @@
+## YAML Template.
+mymodule.newpage:
+  name: 'Mymodule Stuff'
+  title: 'Mymodule'
+  description: 'Link to mymodule content'
+  route_name: mymodule.content
+  weight: 10
+  menu_name: main
+

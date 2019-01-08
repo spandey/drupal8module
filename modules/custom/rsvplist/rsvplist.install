@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the book module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+//function book_uninstall() {
+//  // Clear book data out of the cache.
+//  \Drupal::cache('data')->deleteAll();
+//}
+
+/**
+ * Implements hook_schema().
+ */
+function rsvplist_schema() {
+  $schema['rsvplist'] = [
+  'description' => 'Store email, timestamp, nid and uid for an rsvp.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => "The primary identifier for the record.",
+      ],
+      'nid' => [
+        'description' => 'The {node} .nid for this rsvp.',
+        'type' => 'varchar',
+        'not null' => FALSE,
+        'default' => 0,
+        'length' =>64,
+      ],
+      'uid' => [
+        'description' => 'The {users} .uid that added this rsvp',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'created' => [
+        'description' => 'Timestamp for when rsvp created',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],  
+      'email' => [
+        'description' => 'User\'s email address.',
+        'type' => 'varchar',
+        'not null' => FALSE,
+        'default' => 0,
+        'length' =>64,
+      ],
+      
+    ],
+    'primary key' => ['id'],
+    'indexes' => array(
+        'node' =>array('nid'),
+        'node_user'=>array('nid','uid'),
+        
+    ),
+    
+  ];
+$schema['rsvplist_enabled'] = [
+  'description' => 'Track whether rsvplist is enabled for a node.',
+    'fields' => [
+      'nid' => [
+        'description' => 'The {node} .nid tha has rsvplist enabled.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+'primary key' => ['nid'],    
+];
+  return $schema;
+}

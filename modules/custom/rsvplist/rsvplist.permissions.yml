@@ -1,0 +1,14 @@
+view rsvplist:
+  description: 'View and submit RSVP form.'
+  title: 'View RSVP Form'
+  restrict access: TRUE
+
+access rsvplist report:
+  title: 'Access List of RSVPs'
+  description: 'View the report listing all RSVPs submitted .'
+  restrict access: TRUE
+
+administrator rsvplist:
+  title: 'Administrator RSVP Settings'
+  description: 'Access the RSVP administrative setting Page.'
+  restrict access: TRUE

@@ -1,0 +1,21 @@
+## YAML Template.
+rsvplist.newpage:
+  name: 'rsvp'
+  title: 'Rsvplist'
+  description: 'Link to rsvplist form'
+  route_name: rsvplist.form
+  weight: 10
+  menu_name: main
+rsvplist.admin_settings:
+  title: 'RSVP List settings'
+  description: 'Control the display of RSVP form.'
+  route_name: rsvplist.admin_settings
+  parent: 'system.admin_config_content'
+  weight: 10
+rsvplist.report:
+  title: 'List of RSVP submissions '
+  description: 'Viwe list of RSVPs'
+  route_name: rsvplist.report
+  parent: 'system.admin_reports'
+  weight: 0
+
